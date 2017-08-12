@@ -1,0 +1,31 @@
+
+<!-- () -> means event binding (paranthesis and the event name in between)-->
+<!-- [] -> means that we want to bind a property -->
+<!-- $event - keep the data emmited with that event-->
+<label> Server Name </label>
+<!-- One way data-binding -->
+ <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)">  -->
+
+<!-- two way data binding -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- <p> Server Name is: {{ serverName }} </p> -->
+
+<button class="btn btn-primary" (click)="onCreateServer()"  [disabled]="!allowNewServer"  > {{ serverCreationStatus }}</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- * - is required because it changes the structure of our DOOM, the directive itself is only ngIf-->
+<!-- # -> local reference on that element -->
+<p *ngIf="serverCreated"> Server was created! Server name is: -- {{serverName}}--</p>
+<!-- 
+<ng-template #noServer> 
+ <p> No server was created ! </p>
+</ng-template> -->
+<!-- <p *ngIf="serverCreated; else noServer"> Server was created! Server name is: -- {{serverName}}--</p> -->
+
+<!-- <app-server *ngFor="let server of servers"></app-server>  -->
+
+
+<ul class="nav nav-pills nav-stacked">
+    <li class="server-item" *ngFor="let server of realServers">
+      <a href="#"> {{ server.name }}</a>
+    </li>
+</ul>

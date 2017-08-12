@@ -1,0 +1,17 @@
+
+<!-- 
+    > from ts to html
+    property binding : [property] = "data"
+    string interpolation: {{ data }}
+    <> two way databing :
+    (event) = "expression"
+    Combination of both : [(ngModel)] = "data"
+
+    String interpolation : you can write an expression that return a string at the end
+--> 
+
+<!-- binding to a property of the directive-->
+<!-- ngClass - add the class if the condition is true -->
+<p [ngStyle] = "{backgroundColor: getColor()}"
+    [ngClass] = "{online: serverStatus === 'online'}">
+     {{ 'Server' }} with id {{serverId}} is  {{ getServerStatus()  }}</p>

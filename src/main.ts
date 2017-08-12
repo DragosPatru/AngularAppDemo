@@ -8,4 +8,5 @@ if (environment.production) {
   enableProdMode();
 }
 
+// PASS THE APP MODULE TO THIS FILE
 platformBrowserDynamic().bootstrapModule(AppModule);
